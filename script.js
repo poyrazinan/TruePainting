@@ -90,24 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----------------------
-// Contact form handling
+// Contact form handling (Formspree bağlantılı)
 // ----------------------
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            projectType: document.getElementById('projectType').value,
-            message: document.getElementById('message').value
-        };
-        console.log('Form submitted:', formData);
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
     });
+    if (res.ok) {
+      alert('Mesajınız başarıyla gönderildi! 🎉');
+      form.reset();
+    } else {
+      alert('Bir hata oluştu, lütfen tekrar deneyin.');
+    }
+  });
 }
+
 
 // ----------------------
 // Mobile menu toggle
