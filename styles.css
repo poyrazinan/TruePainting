@@ -621,30 +621,32 @@ html, body {
 }
 
 
+/* Mobilde kesin 1 kolon */
 @media (max-width: 768px) {
     .references-grid {
-        display: block;  /* grid yerine block kullan, her kart alt alta */
-        gap: 24px;       /* sadece boşluk bırak */
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* tek kolon zorla */
+        gap: 24px;
         padding: 0 16px;
     }
 
     .reference-card {
-        width: 100%;      /* kartlar kutuyu doldursun */
-        margin-bottom: 24px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 24px auto; /* alt boşluk bırak */
         padding: 16px;
         box-sizing: border-box;
+    }
+
+    .reference-image {
+        width: 100%;
+        aspect-ratio: 16/9; /* mobilde daha yatay ve kısa */
     }
 
     .reference-content {
         padding: 12px 8px;
     }
-
-    .reference-image {
-        aspect-ratio: 16/9; /* mobilde daha yatay ve kısa görünüm */
-        width: 100%;
-    }
 }
-
 
 
 
