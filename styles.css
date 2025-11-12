@@ -620,19 +620,17 @@ html, body {
     width: 100%;
 }
 
-/* Mobilde tek kolon garanti */
+
 @media (max-width: 768px) {
     .references-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* sadece 1 kolon */
-        gap: 24px;
+        display: block;  /* grid yerine block kullan, her kart alt alta */
+        gap: 24px;       /* sadece boşluk bırak */
         padding: 0 16px;
     }
 
     .reference-card {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
+        width: 100%;      /* kartlar kutuyu doldursun */
+        margin-bottom: 24px;
         padding: 16px;
         box-sizing: border-box;
     }
@@ -642,7 +640,8 @@ html, body {
     }
 
     .reference-image {
-        aspect-ratio: 16/9; /* daha kısa ve geniş görünüm */
+        aspect-ratio: 16/9; /* mobilde daha yatay ve kısa görünüm */
+        width: 100%;
     }
 }
 
