@@ -549,6 +549,7 @@ html, body {
 }
 
 /* Kart kutusu */ 
+/* Kart kutusu */ 
 .reference-card { 
     background-color: var(--white); 
     border-radius: 12px; 
@@ -559,7 +560,11 @@ html, body {
     flex-direction: column; 
     opacity: 0; 
     transform: translateY(20px);
-} 
+
+    width: 100%;      /* Services ile aynı genişlik */
+    max-width: 400px; /* Services kartlarının max-width değeri */
+}
+
 
 .reference-card.visible { 
     opacity: 1; 
