@@ -25,6 +25,7 @@ const navMenu = document.querySelector('.nav-links');
 
 menuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    menuBtn.classList.toggle('open');
 });
 
 

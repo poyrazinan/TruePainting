@@ -139,44 +139,62 @@ html {
         z-index: 1100;
     }
 
+    /* Hamburger ikonunun X’e dönüşümü */
+    .mobile-menu-btn.open span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .mobile-menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.open span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+
+    .mobile-menu-btn span {
+        transition: all 0.3s ease;
+    }
+
     /* Menü kapalıyken gizli */
     .nav-links {
         display: none;
         position: absolute;
         top: 80px; /* navbar’ın hemen altına */
-        left: 10px;
-        right: 10px;
+        right: 10px; /* sağa yaslı */
+        width: 220px; /* dar dikdörtgen */
         background-color: var(--white);
         flex-direction: column; /* alt alta diz */
-        align-items: center;
+        align-items: flex-start; /* yazılar sola hizalı */
         gap: 16px;
-        padding: 20px 0;
+        padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: auto; /* tam ekran değil, ortalanmış */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        animation: slideInRight 0.3s ease forwards;
     }
 
-    /* Menü açıkken göster */
+    /* Menü açıldığında göster */
     .nav-links.active {
         display: flex;
         animation: fadeInDown 0.3s ease forwards; /* animasyon (opsiyonel ama hoş durur) */
     }
+    
 
-    /* Menü açıldığında kayma olmasın */
+    /* Menü açıldığında sayfa kaymasını engelle */
     body.menu-open {
         overflow: hidden;
     }
 }
 
-/* Küçük bir animasyon (isteğe bağlı) */
-@keyframes fadeInDown {
+/* Menü sağdan kayan animasyon */
+@keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateX(30px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
@@ -184,6 +202,7 @@ html {
 html, body {
     overflow-x: hidden;
 }
+
 
 
 /* Hero Section */
