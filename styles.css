@@ -133,6 +133,47 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+    }
+
+    /* Menü butonu mobilde görünür olsun */
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1100;
+    }
+
+    /* Menü kapalıyken gizli */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px; /* navbar’ın hemen altına */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column; /* alt alta diz */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Menü açıkken göster */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Menü açıldığında kayma olmasın */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
 
 /* Hero Section */
 .hero-section {

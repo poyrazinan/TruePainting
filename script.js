@@ -18,6 +18,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ----------------------
+// Mobile menu toggle
+// ----------------------
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+
+// ----------------------
 // Smooth scroll
 // ----------------------
 function scrollToSection(sectionId) {
