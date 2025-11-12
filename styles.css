@@ -51,14 +51,18 @@ html {
 }
 
 .nav-container {
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 60px; 
+    padding: 0 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    box-sizing: border-box; /* En kritik kısım */
+    overflow: hidden; /* Taşmayı engeller */
 }
+
 
 .logo img {
     height: 80px;
@@ -117,6 +121,18 @@ html {
     border-radius: 2px;
     transition: all 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px; /* Sağdan boşluk azalıyor */
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+    }
+}
+
 
 /* Hero Section */
 .hero-section {
