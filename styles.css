@@ -632,18 +632,27 @@ html, body {
 
 
 
+/* Mobilde her satırda 1 proje olacak şekilde ayarlama */
 @media (max-width: 768px) {
+    .references-grid {
+        grid-template-columns: 1fr; /* her satırda 1 kolon */
+        gap: 24px; /* dilersen biraz daha sıkışık yapabilirsin */
+        padding: 0 16px; /* kenarlardan boşluk bırak */
+    }
+
     .reference-card {
-        width: 100%;
-        max-width: 500px;
+        max-width: 100%;
         margin: 0 auto;
         padding: 16px;
         box-sizing: border-box;
-        flex-direction: column;
     }
 
     .reference-content {
         padding: 12px 8px;
+    }
+
+    .reference-image {
+        aspect-ratio: 16/9; /* mobilde daha geniş ve kısa bir görünüm için */
     }
 }
 
