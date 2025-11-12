@@ -548,50 +548,49 @@ html, body {
     margin: 0 auto;
 }
 
-/* Kart kutusu */
-.reference-card {
-    background-color: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
+/* Kart kutusu */ 
+.reference-card { 
+    background-color: var(--white); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s ease; 
+    display: flex; 
+    flex-direction: column; 
+    opacity: 0; 
     transform: translateY(20px);
+} 
+
+.reference-card.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+} 
+
+.reference-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
 }
 
-.reference-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Resim */ 
+.reference-image { 
+    width: 100%; /* grid kutusunu doldur */ 
+    aspect-ratio: 4/3; /* web’de eşit boyutlu görünsün */ 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
 
-.reference-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-/* Resim */
-.reference-image {
-    width: 100%;           /* grid kutusunu doldur */
-    aspect-ratio: 4/3;     /* web’de eşit boyutlu görünsün */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.reference-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
+.reference-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    transition: transform 0.3s ease; 
+} 
 
 .reference-card:hover .reference-image img {
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
 /* İçerik */
@@ -620,8 +619,7 @@ html, body {
     width: 100%;
 }
 
-
-/* Mobilde kesin 1 kolon */
+/* Mobilde tek kolon */
 @media (max-width: 768px) {
     .references-grid {
         display: grid !important;
@@ -647,6 +645,7 @@ html, body {
         padding: 12px 8px;
     }
 }
+
 
 
 
