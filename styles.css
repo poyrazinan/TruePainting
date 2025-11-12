@@ -627,43 +627,39 @@ html, body {
         display: grid !important;
         grid-template-columns: 1fr !important; /* tek sütun */
         max-width: 100% !important;
-        gap: 32px; /* biraz daha geniş boşluk */
-        padding: 0 16px; /* kenarlardan rahat boşluk */
+        gap: 32px;
+        padding: 0 16px;
     }
 
     .reference-card {
-        width: 100% !important;
+        width: 100% !important; /* kart tam genişlik */
         margin: 0;
-        padding: 32px; /* iç boşluğu artır, kart büyük gözüksün */
-        aspect-ratio: auto;
+        padding: 32px; /* iç boşluğu artır */
+        min-width: 0; /* önemli: genişliği kısıtlayan min-width olmasın */
     }
 
     .reference-image {
         width: 100%;
-        height: 250px; /* mobilde yüksekliği artırdık */
-        aspect-ratio: auto; /* oranı korun */
-        border-radius: 12px;
-        overflow: hidden;
+        height: auto;       /* görsel mobilde yükseklik otomatik */
+        min-height: 200px;  /* minimum yüksekliği ayarla */
     }
 
     .reference-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* resim kartı doldursun */
+        object-fit: cover;
     }
 
     .reference-content {
-        padding: 20px 16px;
+        padding: 24px 16px;
     }
 
     .reference-content h3 {
-        font-size: 1.75rem; /* başlık daha büyük */
-        margin-bottom: 12px;
+        font-size: 1.75rem;
     }
 
     .reference-content p {
-        font-size: 1.125rem; /* metin biraz daha okunaklı */
-        margin-bottom: 16px;
+        font-size: 1.125rem;
     }
 
     .reference-content .btn-primary {
@@ -671,6 +667,7 @@ html, body {
         padding: 12px 16px;
     }
 }
+
 
 
 
