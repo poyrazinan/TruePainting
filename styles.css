@@ -584,14 +584,19 @@ html, body {
     width: 100%;
     aspect-ratio: 4/3;
     overflow: hidden;
+    display: flex;            /* flex ile ortalama */
+    justify-content: center;  /* yatay ortala */
+    align-items: center;      /* dikey ortala */
 }
 
 .reference-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;         /* kutuyu aşmasın */
+    max-height: 100%;        /* yüksekliği taşmasın */
+    object-fit: cover;       /* oran bozulmasın */
+    display: block;
     transition: transform 0.3s ease;
 }
+
 
 .reference-card:hover .reference-image img {
     transform: scale(1.05);
@@ -622,60 +627,23 @@ html, body {
     width: 100%;
 }
 
+
+
+
 @media (max-width: 768px) {
-    .references-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* tek sütun */
-        max-width: 100% !important;
-        gap: 24px;
-        padding: 0 16px;
-    }
-
     .reference-card {
-        width: 100% !important;    /* tam genişlik */
-        max-width: 500px;          /* çok geniş olmasın */
-        margin: 0 auto;            /* ortalanmış */
-        padding: 16px;             /* iç boşluk dengeli */
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 16px;
         box-sizing: border-box;
-    }
-
-    .reference-image {
-        width: 100%;
-        height: 200px;             /* sabit kısa yükseklik */
-        overflow: hidden;
-        border-radius: 12px;
-        margin-bottom: 16px;
-    }
-
-    .reference-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;         /* kutuyu doldur, görsel kesilsin ama oran bozulmasın */
+        flex-direction: column;
     }
 
     .reference-content {
         padding: 12px 8px;
     }
-
-    .reference-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 8px;
-    }
-
-    .reference-content p {
-        font-size: 1rem;
-        line-height: 1.4;
-        margin-bottom: 12px;
-    }
-
-    .reference-content .btn-primary {
-        font-size: 1rem;
-        padding: 10px 12px;
-    }
 }
-
-
-
 
 
 
