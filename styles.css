@@ -122,17 +122,7 @@ html {
     transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 20px; /* Sağdan boşluk azalıyor */
-    }
-
-    .logo img {
-        height: 60px;
-        width: auto;
-    }
-}
-
+/* ----------- MOBİL GÖRÜNÜM ----------- */
 @media (max-width: 768px) {
     .nav-container {
         padding: 0 20px;
@@ -154,19 +144,22 @@ html {
         display: none;
         position: absolute;
         top: 80px; /* navbar’ın hemen altına */
-        left: 0;
-        width: 100%;
+        left: 10px;
+        right: 10px;
         background-color: var(--white);
         flex-direction: column; /* alt alta diz */
         align-items: center;
-        gap: 20px;
+        gap: 16px;
         padding: 20px 0;
+        border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: auto; /* tam ekran değil, ortalanmış */
     }
 
     /* Menü açıkken göster */
     .nav-links.active {
         display: flex;
+        animation: fadeInDown 0.3s ease forwards; /* animasyon (opsiyonel ama hoş durur) */
     }
 
     /* Menü açıldığında kayma olmasın */
@@ -174,6 +167,24 @@ html {
         overflow: hidden;
     }
 }
+
+/* Küçük bir animasyon (isteğe bağlı) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Yatay taşmayı engelleyelim */
+html, body {
+    overflow-x: hidden;
+}
+
 
 /* Hero Section */
 .hero-section {
