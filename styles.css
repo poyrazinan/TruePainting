@@ -157,29 +157,30 @@ html {
     }
 
     /* Menü kapalıyken gizli */
-    .nav-links {
+.nav-links {
     display: none;
-    position: fixed;      /* absolute yerine fixed */
-    top: 0;               /* sayfanın üstünden başlasın */
-    right: 0;             /* sağdan hizalı */
-    height: 100vh;         /* tam ekran yüksekliği */
-    width: 100%;           /* tam ekran genişliği */
+    position: absolute;
+    top: 80px;          /* navbar’ın hemen altına */
+    right: 10px;        /* sağa yaslı */
+    width: 220px;       /* dar dikdörtgen */
     background-color: var(--white);
     flex-direction: column;
-    align-items: center;  /* yazılar ortalanabilir */
-    justify-content: center; /* dikey ortalama */
-    gap: 24px;
+    align-items: flex-start;
+    gap: 16px;
     padding: 20px;
-    z-index: 9999;        /* üstte görünsün */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     animation: slideInRight 0.3s ease forwards;
+    max-height: calc(100vh - 100px); /* sayfanın tamamını kaplamasın */
+    overflow-y: auto;  /* içerik taşarsa scroll */
+    z-index: 1200;      /* navbar üstünde */
 }
 
+/* Menü açıldığında göster */
+.nav-links.active {
+    display: flex;
+}
 
-    /* Menü açıldığında göster */
-    .nav-links.active {
-        display: flex;
-        animation: fadeInDown 0.3s ease forwards; /* animasyon (opsiyonel ama hoş durur) */
-    }
     
 
     /* Menü açıldığında sayfa kaymasını engelle */
@@ -250,12 +251,12 @@ html, body {
     transform: translateY(-1px);
 }
 
+/* Mobil görünümde gizle (hamburger aktif olunca gerek yok) */
 @media (max-width: 768px) {
     .nav-actions {
         display: none;
     }
 }
-
 
 
 
@@ -823,7 +824,7 @@ html, body {
 }
 
 .btn-primary:hover {
-    background-color: #37006b;
+    background-color: #4B0082;
 }
 
 
