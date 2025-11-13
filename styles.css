@@ -58,14 +58,14 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+   /* height: 80px; */
     box-sizing: border-box; /* En kritik kısım */
     overflow: hidden; /* Taşmayı engeller */
 }
 
 
 .logo img {
-    height: 80px;
+    height: 180px;
     width: auto;
 }
 
@@ -75,6 +75,7 @@ html {
     gap: 12px; 
     text-decoration: none; 
     border: none; 
+    height: 100px;
 }
 
 .logo-text {
@@ -496,9 +497,7 @@ html, body {
 /* Arrows */
 .gallery-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
+    transform: none;
     background-color: rgba(153,102,204,0.9);
     border: none;
     font-size: 2rem;
@@ -517,8 +516,28 @@ html, body {
     background-color: var(--primary-color);
 }
 
-.gallery-btn.left { left: 10px; }
-.gallery-btn.right { right: 10px; }
+@media(max-width: 1260px) {
+.gallery-btn.left { 
+    left: -10px !important;
+}
+.gallery-btn.right {
+    right: -10px !important;
+ }
+}
+.gallery-btn.left { 
+    left: -40px;
+    z-index: 500;
+}
+.gallery-btn.right {
+    right: -40px;
+ }
+ .gallery-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    overflow: visible;
+ }
 
 /* Lightbox */
 .lightbox {
@@ -550,10 +569,10 @@ html, body {
 }
 
 /* Responsive */
-@media (max-width: 1200px) { .gallery-item { width: 350px; height: 220px; } }
-@media (max-width: 992px)  { .gallery-item { width: 300px; height: 200px; } }
-@media (max-width: 768px)  { .gallery-item { width: 250px; height: 160px; } }
-@media (max-width: 480px)  { .gallery-item { width: 200px; height: 140px; } }
+@media (max-width: 1200px) { .gallery-item { width: 350px; } }
+@media (max-width: 992px)  { .gallery-item { width: 300px; } }
+@media (max-width: 768px)  { .gallery-item { width: 250px; } }
+@media (max-width: 480px)  { .gallery-item { width: 200px; } }
 
 
 
@@ -655,6 +674,7 @@ html, body {
 .service-card.visible {
     opacity: 1;
     transform: translateY(0);
+    padding: 1rem;
 }
 
 /* Hover efekti – mor parıltı */
@@ -669,7 +689,6 @@ html, body {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    margin-bottom: 24px; 
     transition: transform 0.3s ease;
 }
 
@@ -685,6 +704,7 @@ html, body {
     font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: 0.5px;
+    padding: 0.2rem;
 }
 
 /* Açıklama */
@@ -694,6 +714,7 @@ html, body {
     font-size: 1rem;
     margin-bottom: 0;
     transition: color 0.3s ease;
+    padding-bottom: 1rem;
 }
 
 
@@ -722,6 +743,7 @@ html, body {
     object-fit: cover;     /* oran bozulmadan kartı doldur */
     display: block;
     transition: transform 0.3s ease;
+    border-radius: 1rem;
 }
 
 /* Hover efekti */
@@ -1215,7 +1237,6 @@ html, body {
   object-fit: cover;
   border-radius: 16px;
   display: block;
-  min-height: 650px; /* 🔹 Boyu artırıldı */
 }
 
 
@@ -1319,10 +1340,6 @@ html, body {
   .gallery-item,
   .process-steps {
     flex: 1 1 100%;
-  }
-
-  .gallery-item img {
-    min-height: 350px;
   }
 
   .process-card {
