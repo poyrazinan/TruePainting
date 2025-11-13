@@ -158,20 +158,22 @@ html {
 
     /* Menü kapalıyken gizli */
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px; /* navbar’ın hemen altına */
-        right: 10px; /* sağa yaslı */
-        width: 220px; /* dar dikdörtgen */
-        background-color: var(--white);
-        flex-direction: column; /* alt alta diz */
-        align-items: flex-start; /* yazılar sola hizalı */
-        gap: 16px;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        animation: slideInRight 0.3s ease forwards;
-    }
+    display: none;
+    position: fixed;      /* absolute yerine fixed */
+    top: 0;               /* sayfanın üstünden başlasın */
+    right: 0;             /* sağdan hizalı */
+    height: 100vh;         /* tam ekran yüksekliği */
+    width: 100%;           /* tam ekran genişliği */
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: center;  /* yazılar ortalanabilir */
+    justify-content: center; /* dikey ortalama */
+    gap: 24px;
+    padding: 20px;
+    z-index: 9999;        /* üstte görünsün */
+    animation: slideInRight 0.3s ease forwards;
+}
+
 
     /* Menü açıldığında göster */
     .nav-links.active {
@@ -248,12 +250,12 @@ html, body {
     transform: translateY(-1px);
 }
 
-/* Mobil görünümde gizle (hamburger aktif olunca gerek yok) */
 @media (max-width: 768px) {
     .nav-actions {
         display: none;
     }
 }
+
 
 
 
