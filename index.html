@@ -33,12 +33,12 @@
 
             <!-- Sağ taraf: Telefon ve Buton -->
             <div class="nav-actions">
-            <a href="tel:+447939931368" class="phone-link">
-                +44 7939 931360
-            </a>
-            <a href="#contact" class="quote-btn">
-                Get a Free Quote
-            </a>
+                <a href="tel:+447939931368" class="phone-link">
+                    +44 7939 931360
+                </a>
+                <a href="#contact" class="quote-btn">
+                    Get a Free Quote
+                </a>
             </div>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -83,7 +83,12 @@
                         <span>Window cleaning & screen replacement</span>
                     </li>
                 </ul>
-                <button class="btn-primary" onclick="scrollToSection('contact')">Get a Free Quote</button>
+                <div class="cta-container">
+                    <a href="tel:+447939931368" class="phone-link">
+                        +44 7939 931360
+                    </a>
+                    <button class="btn-primary" onclick="scrollToSection('contact')">Get a Free Quote</button>
+                </div>
             </div>
         </div>
     </section>
@@ -315,85 +320,83 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Contact us today for a free quote and consultation</p>
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Contact us today for a free quote and consultation</p>
 
-            <!-- GRID BAŞLANGICI -->
-            <div class="contact-grid">
+                <!-- GRID BAŞLANGICI -->
+                <div class="contact-grid">
 
-            <!-- UK Office -->
-            <div class="contact-box">
-                <h3>UK Office</h3>
-                <p class="office-name">True Painting - Gursoy Construction Ltd.</p>
-                <p>Demsa Accounts, 565 Green Lanes, Haringey, London, N8 0RL</p>
-                <p><strong>Phone:</strong> <a href="tel:+447939931360">+44 7939 931360</a></p>
-                <p><strong>Email:</strong> <a href="mailto:ozantaylanseven@gmail.com">ozantaylanseven@gmail.com</a></p>
-                <p><strong>Email:</strong> <a href="mailto:oseven@gursoyconstruction.com">oseven@gursoyconstruction.com</a></p>
+                    <!-- UK Office -->
+                    <div class="contact-box">
+                        <h3>UK Office</h3>
+                        <p class="office-name">True Painting - Gursoy Construction Ltd.</p>
+                        <p>Demsa Accounts, 565 Green Lanes, Haringey, London, N8 0RL</p>
+                        <p><strong>Phone:</strong> <a href="tel:+447939931360">+44 7939 931360</a></p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:ozantaylanseven@gmail.com">ozantaylanseven@gmail.com</a></p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:oseven@gursoyconstruction.com">oseven@gursoyconstruction.com</a></p>
+                    </div>
+
+                    <!-- Turkey Office -->
+                    <div class="contact-box">
+                        <h3>Turkey Office</h3>
+                        <p class="office-name">Gurmet & Gursoy Insaat A.S.</p>
+                        <p>Altunizade, Kısıklı Cad. / Oymacı Sok. No:16, 34662 Üsküdar, Istanbul</p>
+                        <p><strong>Phone:</strong> <a href="tel:+902164740556">+90 216 474 05 56</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:metin@gurmet.com.tr">metin@gurmet.com.tr</a></p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-box form-box">
+                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xwpakgne"
+                            method="POST">
+                            <h3>Send Us a Message</h3>
+
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType" name="projectType">
+                                    <option value="">Select a project type</option>
+                                    <option value="interior">Interior Painting</option>
+                                    <option value="exterior">Exterior Painting</option>
+                                    <option value="cabinet">Cabinet Painting & Staining</option>
+                                    <option value="renovation">Renovations</option>
+                                    <option value="drywall">Drywall Repairs</option>
+                                    <option value="commercial">Commercial Painting</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-contact">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- GRID BİTİŞİ -->
             </div>
-
-            <!-- Turkey Office -->
-            <div class="contact-box">
-                <h3>Turkey Office</h3>
-                <p class="office-name">Gurmet & Gursoy Insaat A.S.</p>
-                <p>Altunizade, Kısıklı Cad. / Oymacı Sok. No:16, 34662 Üsküdar, Istanbul</p>
-                <p><strong>Phone:</strong> <a href="tel:+902164740556">+90 216 474 05 56</a></p>
-                <p><strong>Email:</strong> <a href="mailto:metin@gurmet.com.tr">metin@gurmet.com.tr</a></p>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-box form-box">
-                <form
-                id="contactForm"
-                class="contact-form"
-                action="https://formspree.io/f/xwpakgne"
-                method="POST"
-                >
-                <h3>Send Us a Message</h3>
-
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" />
-                </div>
-
-                <div class="form-group">
-                    <label for="projectType">Project Type</label>
-                    <select id="projectType" name="projectType">
-                    <option value="">Select a project type</option>
-                    <option value="interior">Interior Painting</option>
-                    <option value="exterior">Exterior Painting</option>
-                    <option value="cabinet">Cabinet Painting & Staining</option>
-                    <option value="renovation">Renovations</option>
-                    <option value="drywall">Drywall Repairs</option>
-                    <option value="commercial">Commercial Painting</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
-            </div>
-            <!-- GRID BİTİŞİ -->
-        </div>
         </section>
 
 
-       
+
         <!-- Footer -->
         <footer class="footer">
             <div class="container">

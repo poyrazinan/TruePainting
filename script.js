@@ -20,13 +20,30 @@ window.addEventListener('scroll', () => {
 // ----------------------
 // Mobile menu toggle
 // ----------------------
-const menuBtn = document.querySelector('.mobile-menu-btn');
-const navMenu = document.querySelector('.nav-links');
 
-menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuBtn.classList.toggle('open');
+
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.nav-links');
+
+    // Hamburger butona basınca aç/kapa
+    btn.addEventListener('click', toggleMenu);
+
+    // Çarpıya basınca da kapat (pseudo-element ama active olduğunda gerçek tıklanabilir)
+    menu.addEventListener('click', function (e) {
+        if (e.target === menu || e.target.matches('.nav-links.active::before')) {
+            toggleMenu();
+        }
+    });
+
+    function toggleMenu() {
+        btn.classList.toggle('open');
+        menu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    }
 });
+
+
 
 
 // ----------------------
@@ -94,21 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // ----------------------
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            alert('Mesajınız başarıyla gönderildi! 🎉');
+            form.reset();
+        } else {
+            alert('Bir hata oluştu, lütfen tekrar deneyin.');
+        }
     });
-    if (res.ok) {
-      alert('Mesajınız başarıyla gönderildi! 🎉');
-      form.reset();
-    } else {
-      alert('Bir hata oluştu, lütfen tekrar deneyin.');
-    }
-  });
 }
 
 

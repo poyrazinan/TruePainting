@@ -124,65 +124,70 @@ html {
 
 /* ----------- MOBİL GÖRÜNÜM ----------- */
 @media (max-width: 768px) {
-    .nav-container {
-        padding: 0 20px;
-    }
-
-    .logo img {
-        height: 60px;
-        width: auto;
-    }
-
-    /* Menü butonu mobilde görünür olsun */
-    .mobile-menu-btn {
-        display: flex;
-        z-index: 1100;
-    }
-
-    /* Hamburger ikonunun X’e dönüşümü */
-    .mobile-menu-btn.open span:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
-    }
-
-    .mobile-menu-btn.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-btn.open span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
-    }
-
-    .mobile-menu-btn span {
-        transition: all 0.3s ease;
-    }
-
-    /* Menü kapalıyken gizli */
+    /* ESKİ HALİNİ SİL, YERİNE BUNU KOY */
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px; /* navbar’ın hemen altına */
-        right: 10px; /* sağa yaslı */
-        width: 220px; /* dar dikdörtgen */
-        background-color: var(--white);
-        flex-direction: column; /* alt alta diz */
-        align-items: flex-start; /* yazılar sola hizalı */
-        gap: 16px;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        animation: slideInRight 0.3s ease forwards;
+        position: fixed;
+        top: 0;
+        right: -300px;                    /* kapalıyken sağda */
+        width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        padding: 100px 40px 60px 40px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: right 0.4s ease;
+        z-index: 1050;
+        flex-direction: column;
+        gap: 28px;
+        overflow-y: auto;
+
+        /* YENİ: display: none yerine bunları kullan */
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
     }
 
-    /* Menü açıldığında göster */
     .nav-links.active {
-        display: flex;
-        animation: fadeInDown 0.3s ease forwards; /* animasyon (opsiyonel ama hoş durur) */
+        right: 0;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
     }
-    
 
-    /* Menü açıldığında sayfa kaymasını engelle */
-    body.menu-open {
-        overflow: hidden;
+    /* × Kapatma butonu (aynı kalıyor) */
+    .nav-links::before {
+        content: "×";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 38px;
+        font-weight: 300;
+        color: #222;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background 0.2s;
+        z-index: 10;
+    }
+
+    .nav-links::before:hover {
+        background: #f0f0f0;
+    }
+
+    /* Link stilleri */
+    .nav-links a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #1a1a1a;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #6b11dc;
     }
 }
 
@@ -399,6 +404,14 @@ html, body {
     background-color: var(--button-hover);
     color: var(--white);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: row-reverse; /* Sıralamayı tersine çevir */
 }
 
 
@@ -808,7 +821,7 @@ html, body {
     height: 70px; /* Kısaltıldı */
 }
 
-.btn-primary {
+.btn-contact {
     background-color: var(--primary-color);
     color: var(--white);
     border: none;
@@ -820,7 +833,7 @@ html, body {
     transition: background 0.3s ease;
 }
 
-.btn-primary:hover {
+.btn-contact:hover {
     background-color: #4B0082;
 }
 
