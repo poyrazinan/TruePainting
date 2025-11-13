@@ -157,30 +157,27 @@ html {
     }
 
     /* Menü kapalıyken gizli */
-.nav-links {
-    display: none;
-    position: absolute;
-    top: 80px;          /* navbar’ın hemen altına */
-    right: 10px;        /* sağa yaslı */
-    width: 220px;       /* dar dikdörtgen */
-    background-color: var(--white);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: slideInRight 0.3s ease forwards;
-    max-height: calc(100vh - 100px); /* sayfanın tamamını kaplamasın */
-    overflow-y: auto;  /* içerik taşarsa scroll */
-    z-index: 1200;      /* navbar üstünde */
-}
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px; /* navbar’ın hemen altına */
+        right: 10px; /* sağa yaslı */
+        width: 220px; /* dar dikdörtgen */
+        background-color: var(--white);
+        flex-direction: column; /* alt alta diz */
+        align-items: flex-start; /* yazılar sola hizalı */
+        gap: 16px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        animation: slideInRight 0.3s ease forwards;
+    }
 
-/* Menü açıldığında göster */
-.nav-links.active {
-    display: flex;
-}
-
+    /* Menü açıldığında göster */
+    .nav-links.active {
+        display: flex;
+        animation: fadeInDown 0.3s ease forwards; /* animasyon (opsiyonel ama hoş durur) */
+    }
     
 
     /* Menü açıldığında sayfa kaymasını engelle */
